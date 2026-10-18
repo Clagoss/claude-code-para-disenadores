@@ -17,26 +17,26 @@ Dentro de Claude Code:
 
 ```text
 /plugin marketplace add Clagoss/claude-code-para-disenadores
-/plugin install diseno-es@claude-code-para-disenadores
+/plugin install lagos-diseno-es@claude-code-para-disenadores
 ```
 
 Y luego, por ejemplo:
 
 ```text
-/diseno-es:contraste-colores
-/diseno-es:ux-writing-es src
-/diseno-es:seo-basico
+/lagos-diseno-es:contraste-colores
+/lagos-diseno-es:ux-writing-es src
+/lagos-diseno-es:seo-basico
 ```
 
-¿Prefieres tenerlos por proyecto? Copia la carpeta `plugins/diseno-es/skills/` a `.claude/skills/`
+¿Prefieres tenerlos por proyecto? Copia la carpeta `plugins/lagos-diseno-es/skills/` a `.claude/skills/`
 de tu proyecto y llámalos como `/contraste-colores`, `/ux-writing-es` y `/seo-basico`.
 
 Los scripts también se pueden correr solos, sin Claude:
 
 ```bash
-node plugins/diseno-es/skills/contraste-colores/scripts/contraste.mjs --tokens src/styles/tokens.css
-node plugins/diseno-es/skills/ux-writing-es/scripts/revisar-texto.mjs src
-node plugins/diseno-es/skills/seo-basico/scripts/seo.mjs --dist dist
+node plugins/lagos-diseno-es/skills/contraste-colores/scripts/contraste.mjs --tokens src/styles/tokens.css
+node plugins/lagos-diseno-es/skills/ux-writing-es/scripts/revisar-texto.mjs src
+node plugins/lagos-diseno-es/skills/seo-basico/scripts/seo.mjs --dist dist
 ```
 
 ## ¿Quieres el flujo completo, de Figma a producción?

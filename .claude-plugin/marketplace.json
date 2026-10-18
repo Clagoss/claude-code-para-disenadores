@@ -10,8 +10,8 @@
   },
   "plugins": [
     {
-      "name": "diseno-es",
-      "source": "./plugins/diseno-es",
+      "name": "lagos-diseno-es",
+      "source": "./plugins/lagos-diseno-es",
       "description": "3 skills gratis para diseñadores: ux-writing-es, contraste-colores y seo-basico."
     }
   ]

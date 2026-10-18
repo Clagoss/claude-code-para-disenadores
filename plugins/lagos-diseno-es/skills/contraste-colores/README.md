@@ -8,11 +8,11 @@ Calcula el contraste WCAG entre los colores de tus tokens (hex, rgb, hsl u oklch
 - Antes de aprobar un modo oscuro.
 
 ## Cómo pedirlo
-Con el plugin instalado (`/kit-diseno:contraste-colores`) o, si copiaste los skills a `.claude/skills/`, `/contraste-colores`.
+Con el plugin instalado (`/lagos-diseno-es:contraste-colores`) o, si copiaste los skills a `.claude/skills/`, `/contraste-colores`.
 También puedes pedirlo con tus palabras (Claude lo reconoce por su descripción).
 
 ```text
-/kit-diseno:contraste-colores
+/lagos-diseno-es:contraste-colores
 ```
 ```text
 Revisa el contraste de src/styles/tokens.css, también el modo oscuro

@@ -1,0 +1,13 @@
+{
+  "name": "lagos-diseno-es",
+  "description": "3 skills de Claude Code para diseñadores, en español: UX writing con tuteo neutro, contraste de colores WCAG desde tus tokens y SEO básico.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Carlos Lagos",
+    "url": "https://carloslagos.cl"
+  },
+  "homepage": "https://github.com/Clagoss/claude-code-para-disenadores",
+  "repository": "https://github.com/Clagoss/claude-code-para-disenadores",
+  "license": "MIT",
+  "keywords": ["diseño", "ux-writing", "español", "accesibilidad", "wcag", "contraste", "seo"]
+}

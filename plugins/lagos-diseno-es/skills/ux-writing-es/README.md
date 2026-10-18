@@ -8,11 +8,11 @@ Revisa y reescribe textos de interfaz en español neutro con tuteo. Un script de
 - Para unificar la voz de un producto.
 
 ## Cómo pedirlo
-Con el plugin instalado (`/kit-diseno:ux-writing-es`) o, si copiaste los skills a `.claude/skills/`, `/ux-writing-es`.
+Con el plugin instalado (`/lagos-diseno-es:ux-writing-es`) o, si copiaste los skills a `.claude/skills/`, `/ux-writing-es`.
 También puedes pedirlo con tus palabras (Claude lo reconoce por su descripción).
 
 ```text
-/kit-diseno:ux-writing-es src
+/lagos-diseno-es:ux-writing-es src
 ```
 ```text
 Revisa los textos del formulario de contacto y propón cambios

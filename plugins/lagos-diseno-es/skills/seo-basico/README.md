@@ -8,11 +8,11 @@ Revisa el sitio construido (`dist/`) o publicado: title, meta description, un h1
 - Cuando el sitio no aparece en buscadores.
 
 ## Cómo pedirlo
-Con el plugin instalado (`/kit-diseno:seo-basico`) o, si copiaste los skills a `.claude/skills/`, `/seo-basico`.
+Con el plugin instalado (`/lagos-diseno-es:seo-basico`) o, si copiaste los skills a `.claude/skills/`, `/seo-basico`.
 También puedes pedirlo con tus palabras (Claude lo reconoce por su descripción).
 
 ```text
-/kit-diseno:seo-basico
+/lagos-diseno-es:seo-basico
 ```
 ```text
 Revisa el SEO de https://tusitio.com
