@@ -1,0 +1,18 @@
+{
+  "name": "claude-code-para-disenadores",
+  "owner": {
+    "name": "Carlos Lagos",
+    "url": "https://carloslagos.cl"
+  },
+  "metadata": {
+    "description": "Skills gratis de Claude Code para diseñadores, en español: UX writing con tuteo, contraste de colores y SEO básico.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "diseno-es",
+      "source": "./plugins/diseno-es",
+      "description": "3 skills gratis para diseñadores: ux-writing-es, contraste-colores y seo-basico."
+    }
+  ]
+}
