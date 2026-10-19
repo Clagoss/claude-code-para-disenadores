@@ -43,6 +43,9 @@ reconoce por su descripción.
   (código legible, sin dependencias). No instala paquetes ni cambia tu configuración.
 - **Qué lee:** los archivos de tu proyecto que le indiques (por defecto, `src/` o la carpeta del
   build).
+- **Credenciales:** ninguna. Ninguna skill lee claves, contraseñas, variables de entorno ni
+  archivos fuera de tu proyecto. Los «tokens» que lee `contraste-colores` son **tokens de diseño**
+  (colores en tu CSS o en un JSON de variables), no tokens de acceso.
 - **Red:** `contraste-colores` y `ux-writing-es` no se conectan a internet. **`seo-basico` solo
   consulta la URL que tú le das**, y solo cuando le das una URL: pide esa página y las páginas
   enlazadas del mismo dominio (40 como máximo, ajustable con `--max`), más su `robots.txt` y su
