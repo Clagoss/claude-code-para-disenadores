@@ -9,6 +9,8 @@
   },
   "homepage": "https://github.com/Clagoss/claude-code-para-disenadores",
   "repository": "https://github.com/Clagoss/claude-code-para-disenadores",
+  "supportUrl": "https://github.com/Clagoss/claude-code-para-disenadores/issues",
+  "documentationUrl": "https://github.com/Clagoss/claude-code-para-disenadores/tree/main/plugins/lagos-diseno-es#readme",
   "license": "MIT",
   "keywords": ["diseño", "ux-writing", "español", "accesibilidad", "wcag", "contraste", "seo"]
 }
