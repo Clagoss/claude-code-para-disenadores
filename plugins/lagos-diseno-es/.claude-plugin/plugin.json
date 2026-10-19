@@ -9,6 +9,7 @@
   },
   "homepage": "https://github.com/Clagoss/claude-code-para-disenadores",
   "repository": "https://github.com/Clagoss/claude-code-para-disenadores",
+  "privacyPolicyUrl": "https://github.com/Clagoss/claude-code-para-disenadores/blob/main/plugins/lagos-diseno-es/PRIVACIDAD.md",
   "supportUrl": "https://github.com/Clagoss/claude-code-para-disenadores/issues",
   "documentationUrl": "https://github.com/Clagoss/claude-code-para-disenadores/tree/main/plugins/lagos-diseno-es#readme",
   "license": "MIT",
