@@ -52,10 +52,10 @@ function leerVariables(texto) {
   let resto = sinComentarios;
   for (const m of sinComentarios.matchAll(reOscuro)) {
     const cuerpo = m[1] || m[2] || '';
-    for (const v of cuerpo.matchAll(/(--[\w-]+)\s*:\s*([^;]+);/g)) oscuro.set(v[1], v[2].trim());
+    for (const v of cuerpo.matchAll(/(--[\w-]+)\s*:\s*([^;{}]+)/g)) oscuro.set(v[1], v[2].trim());
     resto = resto.replace(m[0], '');
   }
-  for (const v of resto.matchAll(/(--[\w-]+)\s*:\s*([^;]+);/g)) claro.set(v[1], v[2].trim());
+  for (const v of resto.matchAll(/(--[\w-]+)\s*:\s*([^;{}]+)/g)) claro.set(v[1], v[2].trim());
   return { claro, oscuro };
 }
 
