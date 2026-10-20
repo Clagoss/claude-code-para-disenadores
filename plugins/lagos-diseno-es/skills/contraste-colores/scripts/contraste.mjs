@@ -198,7 +198,7 @@ function sugerir(frente, fondo, minimo) {
 
 // ---------- Pares a revisar ----------
 const MINIMOS = { texto: 4.5, 'texto-grande': 3, ui: 3 };
-const esFrente = (n) => /texto|text|foreground|\bfg\b|-fg|contraste|on-|tinta|ink|titulo|heading|foco|focus|borde-(campo|fuerte|control|input)|border-(input|strong)|icono|icon|enlace|link/.test(n);
+const esFrente = (n) => /texto|text|foreground|\bfg\b|-fg|contraste?|on-|tinta|ink|titulo|heading|foco|focus|borde-(campo|fuerte|control|input)|border-(input|strong)|icono|icon|enlace|link/.test(n);
 const esFondo = (n) => /fondo|background|\bbg\b|-bg|superficie|surface|base|lienzo|canvas|tarjeta|card|(acento|accent|primario|primary|marca|brand)-(suave|tinte|weak|subtle|light|50|100)/.test(n);
 
 function paresPorNombre(colores) {
@@ -208,10 +208,9 @@ function paresPorNombre(colores) {
   const pares = [];
   for (const f of frentes) {
     const tipo = /foco|focus|borde-|border-|icono|icon/.test(f) ? 'ui' : 'texto';
-    if (/contraste|on-/.test(f)) {
-      // --color-acento-contraste va sobre --color-acento.
-      const base = f.replace(/-?(contraste|on)-?/, '-').replace(/--+/g, '-').replace(/-$/, '').replace('--color-', '--color-');
-      const candidatos = [base, f.replace('-contraste', ''), f.replace('on-', '')].filter((n) => colores.has(n) && n !== f);
+    if (/-contraste?$|-on-/.test(f)) {
+      // --color-acento-contraste (o --color-accent-contrast) va sobre --color-acento; --color-on-primary, sobre --color-primary.
+      const candidatos = [f.replace(/-contraste?$/, ''), f.replace('-on-', '-')].filter((n) => colores.has(n) && n !== f);
       if (candidatos.length) { pares.push({ texto: f, fondo: candidatos[0], tipo }); continue; }
     }
     for (const b of fondos) pares.push({ texto: f, fondo: b, tipo });
