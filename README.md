@@ -28,6 +28,13 @@ Y luego, por ejemplo:
 /lagos-diseno-es:seo-basico
 ```
 
+¿Usas otro agente además de Claude Code (Cursor, Codex, Gemini CLI, Copilot)? Con el instalador
+abierto de [skills.sh](https://skills.sh):
+
+```bash
+npx skills add Clagoss/claude-code-para-disenadores
+```
+
 ¿Prefieres tenerlos por proyecto? Copia la carpeta `plugins/lagos-diseno-es/skills/` a `.claude/skills/`
 de tu proyecto y llámalos como `/contraste-colores`, `/ux-writing-es` y `/seo-basico`.
 
