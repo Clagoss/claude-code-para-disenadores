@@ -35,6 +35,14 @@ abierto de [skills.sh](https://skills.sh):
 npx skills add Clagoss/claude-code-para-disenadores
 ```
 
+¿Ya usas el marketplace de [Build with Claude](https://buildwithclaude.com/plugin/lagos-diseno-es)?
+El plugin también está ahí:
+
+```text
+/plugin marketplace add davepoon/buildwithclaude
+/plugin install lagos-diseno-es@buildwithclaude
+```
+
 ¿Prefieres tenerlos por proyecto? Copia la carpeta `plugins/lagos-diseno-es/skills/` a `.claude/skills/`
 de tu proyecto y llámalos como `/contraste-colores`, `/ux-writing-es` y `/seo-basico`.
 
@@ -45,6 +53,13 @@ node plugins/lagos-diseno-es/skills/contraste-colores/scripts/contraste.mjs --to
 node plugins/lagos-diseno-es/skills/ux-writing-es/scripts/revisar-texto.mjs src
 node plugins/lagos-diseno-es/skills/seo-basico/scripts/seo.mjs --dist dist
 ```
+
+## Dónde más aparece
+
+- [Build with Claude](https://buildwithclaude.com/plugin/lagos-diseno-es): el plugin completo, en su
+  marketplace de Claude Code.
+- [Agentic Awesome Skills](https://github.com/sickn33/agentic-awesome-skills/tree/main/skills/design-token-contrast):
+  la revisión de contraste de tokens, como skill `design-token-contrast`.
 
 ## ¿Quieres el flujo completo, de Figma a producción?
 
