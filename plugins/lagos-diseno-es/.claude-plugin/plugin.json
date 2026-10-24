@@ -2,7 +2,7 @@
   "name": "lagos-diseno-es",
   "displayName": "Diseño en español",
   "description": "3 skills de Claude Code para diseñadores, en español: UX writing con tuteo neutro, contraste de colores WCAG desde tus tokens y SEO básico.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Carlos Lagos",
     "url": "https://carloslagos.cl"

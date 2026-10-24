@@ -17,9 +17,13 @@ También puedes pedirlo con tus palabras (Claude lo reconoce por su descripción
 ```text
 Revisa el contraste de src/styles/tokens.css, también el modo oscuro
 ```
+```text
+Mide el contraste de las variables de este frame de Figma: <link del frame>
+```
 
 ## Qué necesita
 - Node 18 o superior. Nada más.
+- Opcional: el servidor MCP de Figma, para medir las variables de un archivo de Figma (usa `get_variable_defs` y `get_screenshot`; no escribe en Figma).
 
 ## Qué entrega
 - Lista de pares con su contraste y si pasa (4,5:1 texto, 3:1 texto grande y UI).

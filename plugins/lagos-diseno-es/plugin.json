@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "lagos-diseno-es",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "3 skills de Claude Code para diseñadores, en español: UX writing con tuteo neutro, contraste de colores WCAG desde tus tokens y SEO básico.",
   "author": {
     "name": "Carlos Lagos",

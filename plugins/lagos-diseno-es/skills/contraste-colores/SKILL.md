@@ -34,6 +34,26 @@ Si los nombres no siguen ese patrón, crea `.kit/contraste.json` con los pares r
 ```
 y corre con `--pares .kit/contraste.json`. Para explorar una paleta nueva: `--todos`.
 
+### Si los colores están en Figma
+Con el servidor MCP de Figma conectado, mide las variables del archivo de diseño antes de que
+lleguen al código:
+1. Pide el link de un frame (o que la persona lo seleccione en Figma) y llama a
+   `get_variable_defs` sobre ese nodo. Según la documentación de Figma, devuelve las variables y
+   estilos usados en la selección (colores, espaciado, tipografía); quédate con los colores, con
+   su nombre y su valor (por ejemplo `color/texto/suave: #9CA3AF`).
+2. Escribe esos valores en `.kit/figma-tokens.css` como variables CSS: `color/texto/suave` pasa a
+   `--color-texto-suave` (barras y espacios por guiones, en minúsculas, con el prefijo
+   `--color-`) dentro de `:root { … }`.
+3. Si el diseño tiene modo oscuro, pide también un frame que lo use y llama otra vez a
+   `get_variable_defs`. Si los valores cambian, ponlos dentro de `.dark { … }` en el mismo
+   archivo; si salen iguales a los del modo claro, pídele a la persona los valores del modo
+   oscuro en vez de suponerlos.
+4. Corre el cálculo con `--tokens .kit/figma-tokens.css` (y `--pares` si los nombres no siguen el
+   patrón de arriba).
+
+Para ver texto sobre fotos o degradados del diseño, usa `get_screenshot` del mismo nodo (paso 2).
+Solo lees: la propuesta va en el informe y el cambio de la variable lo hace la persona en Figma.
+
 ## 2. Revisa lo que el script no ve
 - Texto sobre **imágenes o degradados**: captura la sección y mira el peor punto.
 - Texto con **opacidad** o colores puestos a mano fuera de los tokens (búscalos con Grep:
