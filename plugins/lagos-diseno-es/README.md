@@ -64,4 +64,4 @@ only fetches the URL you give it.
 
 Licencia MIT · Carlos Lagos · No está afiliado a Anthropic ni a Figma.
 
-Estos tres skills son parte del kit «Del Figma a producción con Claude Code»: [carloslagos.cl/guias/kit-del-figma-a-produccion](https://carloslagos.cl/guias/kit-del-figma-a-produccion/?utm_source=plugin&utm_medium=directorio&utm_campaign=lanzamiento-kit)
+Más del mismo autor: [«Del Figma a producción con Claude Code»](https://carloslagos.cl/guias/kit-del-figma-a-produccion/), un kit de pago sobre el mismo flujo.

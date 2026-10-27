@@ -61,18 +61,10 @@ node plugins/lagos-diseno-es/skills/seo-basico/scripts/seo.mjs --dist dist
 - [Agentic Awesome Skills](https://github.com/sickn33/agentic-awesome-skills/tree/main/skills/design-token-contrast):
   la revisión de contraste de tokens, como skill `design-token-contrast`.
 
-## ¿Quieres el flujo completo, de Figma a producción?
+## Más del mismo autor
 
-Estos tres skills son parte del kit **«Del Figma a producción con Claude Code»**: una guía de diez
-capítulos en español y un pack de 14 skills y 6 subagentes probados para pasar un frame de Figma
-a código con el MCP oficial de Figma, sincronizar tokens con Tailwind v4, hacer QA visual,
-auditar accesibilidad WCAG 2.2, revisar responsive y rendimiento, publicar gratis en Cloudflare y
-revisar tu sitio cada semana. Incluye 5 plantillas de `CLAUDE.md` y 2 proyectos de partida en
-Astro.
-
-**[Conoce el kit →](https://carloslagos.gumroad.com/l/del-figma-a-produccion?utm_source=github&utm_medium=repo&utm_campaign=lanzamiento-kit)**
-
-Y si prefieres leer antes, hay guías gratis en español sobre el mismo flujo en
+Estos tres skills salieron de escribir [«Del Figma a producción con Claude Code»](https://carloslagos.cl/guias/kit-del-figma-a-produccion/),
+un kit de pago más completo sobre el mismo flujo. También hay guías gratis sobre el tema en
 [carloslagos.cl/guias](https://carloslagos.cl/guias/).
 
 ## Licencia
