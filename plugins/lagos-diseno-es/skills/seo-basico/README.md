@@ -34,4 +34,4 @@ Revisa el SEO de https://tusitio.com
 Script: `seo.mjs [--dist dist] [--url https://sitio --max 40] [--json]`. Considera normal el noindex en `/404` y `/componentes`.
 
 ---
-Parte del kit «Del Figma a producción con Claude Code». No está afiliado a Anthropic ni a Figma.
+Parte del plugin gratis `lagos-diseno-es`. No está afiliado a Anthropic ni a Figma.

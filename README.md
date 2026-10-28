@@ -82,9 +82,7 @@ Encuentra el par que falla, mide cuánto falla y propone un color que cumple sin
 
 ## Más del mismo autor
 
-Estos tres skills salieron de escribir [«Del Figma a producción con Claude Code»](https://carloslagos.cl/guias/kit-del-figma-a-produccion/),
-un kit de pago más completo sobre el mismo flujo. También hay guías gratis sobre el tema en
-[carloslagos.cl/guias](https://carloslagos.cl/guias/).
+Guías gratis sobre diseño con Claude Code en [carloslagos.cl/guias](https://carloslagos.cl/guias/).
 
 ## Licencia
 

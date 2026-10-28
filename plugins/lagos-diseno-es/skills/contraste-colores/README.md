@@ -37,4 +37,4 @@ Mide el contraste de las variables de este frame de Figma: <link del frame>
 Script: `contraste.mjs [--tokens archivo.css] [--pares pares.json] [--todos] [--json]`. Arma los pares por nombre (texto/foreground/contraste/foco sobre fondo/superficie/tarjeta). Si tus nombres son otros, usa `--pares`. Texto sobre imágenes o degradados: se revisa en pantalla.
 
 ---
-Parte del kit «Del Figma a producción con Claude Code». No está afiliado a Anthropic ni a Figma.
+Parte del plugin gratis `lagos-diseno-es`. No está afiliado a Anthropic ni a Figma.

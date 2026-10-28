@@ -35,4 +35,4 @@ Revisa los textos del formulario de contacto y propón cambios
 Script: `revisar-texto.mjs <archivos o carpetas> [--json] [--sin-regionalismos]`. Para excluir una línea, agrega el comentario `tuteo-ignorar`. Si tu `CLAUDE.md` define otra voz (usted, un país), manda el `CLAUDE.md`. Guía completa: `guia-de-voz.md`.
 
 ---
-Parte del kit «Del Figma a producción con Claude Code». No está afiliado a Anthropic ni a Figma.
+Parte del plugin gratis `lagos-diseno-es`. No está afiliado a Anthropic ni a Figma.
