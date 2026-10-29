@@ -3,6 +3,12 @@
 Tres skills de [Claude Code](https://code.claude.com/docs) para quien diseña y quiere publicar lo
 que diseña con calidad de producción. En español neutro, con tuteo, probados uno por uno.
 
+> **In English:** three free Claude Code skills for teams shipping interfaces in Spanish.
+> `ux-writing-es` lints UI copy (voseo or vosotros where the product uses tú, leftover English like
+> «Submit», missing ¿¡, «aquí» links), `contraste-colores` checks WCAG contrast of your color tokens and
+> suggests the closest passing color with the same hue, and `seo-basico` checks a built or live site.
+> MIT, Node 18+, nothing installed in your project. Install commands and a real example are below.
+
 | Skill | Qué hace |
 |---|---|
 | `ux-writing-es` | Revisa los textos de tu interfaz: voseo, formas de vosotros, inglés residual («Submit», «Learn more»), mayúsculas de título, signos ¿¡ faltantes, enlaces «aquí» y regionalismos. Después propone botones con verbo, errores útiles y estados vacíos claros. |
