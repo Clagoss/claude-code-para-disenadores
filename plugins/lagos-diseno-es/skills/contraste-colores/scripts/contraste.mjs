@@ -27,7 +27,7 @@ for (let i = 0; i < argv.length; i++) {
   else if (a === '--pares') op.pares = argv[++i];
   else if (a === '--todos') op.todos = true;
   else if (a === '--json') op.json = argv[++i];
-  else if (a === '--ayuda' || a === '-h') { console.log('Uso: node contraste.mjs [--tokens archivo.css] [--pares pares.json] [--todos] [--json salida.json]'); process.exit(0); }
+  else if (a === '--ayuda' || a === '--help' || a === '-h') { console.log('Uso: node contraste.mjs [--tokens archivo.css] [--pares pares.json] [--todos] [--json salida.json]'); process.exit(0); }
 }
 
 function buscarTokens() {

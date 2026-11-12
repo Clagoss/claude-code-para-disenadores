@@ -10,7 +10,8 @@
 //   node revisar-texto.mjs src --sin-regionalismos
 //
 // Para que una línea no se revise, agrega el comentario «tuteo-ignorar» en esa línea.
-// Sale con código 1 si hay errores (voseo o vosotros) y 0 si solo hay avisos.
+// Sale con 1 si hay errores (voseo o vosotros), con 0 si solo hay avisos o nada, y con 2 si no pudo
+// revisar todo lo pedido (ruta inexistente, archivo ilegible o ningún archivo de texto).
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -22,7 +23,7 @@ for (let i = 0; i < argv.length; i++) {
   const a = argv[i];
   if (a === '--json') opciones.json = argv[++i];
   else if (a === '--sin-regionalismos') opciones.regionalismos = false;
-  else if (a === '--ayuda' || a === '-h') {
+  else if (a === '--ayuda' || a === '--help' || a === '-h') {
     console.log('Uso: node revisar-texto.mjs <archivos o carpetas> [--json salida.json] [--sin-regionalismos]');
     process.exit(0);
   } else entradas.push(a);
@@ -225,6 +226,10 @@ function extraerTexto(contenido, ext) {
 // ---------- Reglas ----------
 
 const hallazgos = [];
+// Cuánto se revisó de verdad: un «Sin hallazgos» solo vale si se leyó algo.
+let revisados = 0;
+const noExisten = [];
+const ilegibles = [];
 function reportar(archivo, linea, nivel, regla, fragmento, sugerencia) {
   hallazgos.push({ archivo, linea, nivel, regla, fragmento: fragmento.trim().slice(0, 90), sugerencia });
 }
@@ -232,7 +237,8 @@ function reportar(archivo, linea, nivel, regla, fragmento, sugerencia) {
 function revisarArchivo(archivo) {
   const ext = path.extname(archivo).toLowerCase();
   let contenido;
-  try { contenido = fs.readFileSync(archivo, 'utf8'); } catch { return; }
+  try { contenido = fs.readFileSync(archivo, 'utf8'); } catch { ilegibles.push(archivo); return; }
+  revisados++;
   const lineas = extraerTexto(contenido, ext);
   for (const { linea, crudo, texto, fragmentos } of lineas) {
     if (crudo.includes('tuteo-ignorar')) continue;
@@ -301,7 +307,7 @@ function revisarArchivo(archivo) {
 
 function recorrer(entrada) {
   let stat;
-  try { stat = fs.statSync(entrada); } catch { console.error(`No existe: ${entrada}`); return; }
+  try { stat = fs.statSync(entrada); } catch { noExisten.push(entrada); return; }
   if (stat.isDirectory()) {
     for (const nombre of fs.readdirSync(entrada)) {
       if (IGNORAR_DIRS.has(nombre) || nombre.startsWith('.')) continue;
@@ -314,6 +320,17 @@ function recorrer(entrada) {
 
 for (const e of entradas) recorrer(e);
 
+// Sin nada revisado no hay resultado: sale con 2 (como contraste.mjs), nunca con «Sin hallazgos».
+for (const e of noExisten) console.error(`No existe: ${e}`);
+for (const a of ilegibles) console.error(`No pude leer: ${a}`);
+if (noExisten.length || ilegibles.length || revisados === 0) {
+  if (revisados > 0) console.error(`Revisé ${revisados} archivo${revisados === 1 ? '' : 's'}, pero quedó fuera lo que no existe o no pude leer: corrige la ruta o los permisos y vuelve a correrlo.`);
+  else if (ilegibles.length) console.error(`No revisé ningún archivo: los que encontré no se pudieron leer.`);
+  else if (!noExisten.length) console.error(`No revisé ningún archivo en ${entradas.join(', ')}: no encontré archivos de texto (${[...EXTENSIONES].join(' ')}). Pasa la carpeta de tu código, p. ej. src.`);
+  process.exit(2);
+}
+const cuanto = `Revisé ${revisados} archivo${revisados === 1 ? '' : 's'}.`;
+
 // ---------- Salida ----------
 const orden = { error: 0, aviso: 1, info: 2 };
 hallazgos.sort((a, b) => orden[a.nivel] - orden[b.nivel] || a.archivo.localeCompare(b.archivo) || a.linea - b.linea);
@@ -322,13 +339,13 @@ const avisos = hallazgos.filter((h) => h.nivel === 'aviso').length;
 const infos = hallazgos.filter((h) => h.nivel === 'info').length;
 
 if (hallazgos.length === 0) {
-  console.log('Sin hallazgos: no encontré voseo, vosotros, inglés residual ni problemas de signos o mayúsculas.');
+  console.log(`${cuanto} Sin hallazgos: no encontré voseo, vosotros, inglés residual ni problemas de signos o mayúsculas.`);
 } else {
   for (const h of hallazgos) {
     console.log(`${h.archivo}:${h.linea}  [${h.nivel}] ${h.regla}: «${h.fragmento}» → ${h.sugerencia}`);
   }
-  console.log(`\nResumen: ${errores} errores, ${avisos} avisos, ${infos} notas.`);
+  console.log(`\n${cuanto} Resumen: ${errores} errores, ${avisos} avisos, ${infos} notas.`);
   console.log('Los avisos son hipótesis: revisa cada uno antes de cambiar el texto.');
 }
-if (opciones.json) fs.writeFileSync(opciones.json, JSON.stringify({ errores, avisos, infos, hallazgos }, null, 2));
+if (opciones.json) fs.writeFileSync(opciones.json, JSON.stringify({ revisados, errores, avisos, infos, hallazgos }, null, 2));
 process.exit(errores > 0 ? 1 : 0);

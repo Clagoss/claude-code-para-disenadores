@@ -60,6 +60,11 @@ node plugins/lagos-diseno-es/skills/ux-writing-es/scripts/revisar-texto.mjs src
 node plugins/lagos-diseno-es/skills/seo-basico/scripts/seo.mjs --dist dist
 ```
 
+`revisar-texto` y `seo` dicen cuánto revisaron. Los 3 scripts salen con 1 si hay errores, con 0 si no
+los hay y con 2 si no pudieron revisar lo que les pediste (una ruta que no existe o una carpeta sin
+archivos; en `revisar-texto`, también un archivo que no se pudo leer): un «Sin hallazgos» nunca sale de
+una revisión vacía. Las pruebas se corren con `node --test` desde la raíz del repo.
+
 ## Un ejemplo real
 
 `contraste-colores` sobre tres tokens con un gris de texto secundario demasiado claro:
@@ -77,7 +82,7 @@ Archivo: sample/tokens.css
 ```
 
 Encuentra el par que falla, mide cuánto falla y propone un color que cumple sin cambiar el tono
-(mismo `oklch`, solo más oscuro). Sale con código 1 cuando algo falla, para usarlo en CI.
+(mismo `oklch`, solo más oscuro). Sale con 1 cuando algo falla y con 2 si no pudo medir nada, para usarlo en CI.
 
 ## Dónde más aparece
 

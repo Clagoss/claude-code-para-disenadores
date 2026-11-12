@@ -11,7 +11,7 @@
 // Revisa por página: title, meta description, un solo h1, lang, canonical, Open Graph,
 // imágenes sin alt, noindex, enlaces internos rotos y títulos/descripciones repetidos.
 // Revisa en el sitio: robots.txt, sitemap y que el robots apunte al sitemap.
-// Sale con código 1 si hay errores.
+// Sale con 1 si hay errores, y con 2 si la carpeta no existe o no trae páginas .html.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -24,7 +24,7 @@ for (let i = 0; i < argv.length; i++) {
   else if (a === '--url') op.url = argv[++i];
   else if (a === '--max') op.max = parseInt(argv[++i], 10);
   else if (a === '--json') op.json = argv[++i];
-  else if (a === '--ayuda' || a === '-h') { console.log('Uso: node seo.mjs [--dist carpeta] [--url https://sitio --max 40] [--json salida.json]'); process.exit(0); }
+  else if (a === '--ayuda' || a === '--help' || a === '-h') { console.log('Uso: node seo.mjs [--dist carpeta] [--url https://sitio --max 40] [--json salida.json]'); process.exit(0); }
 }
 
 const NOINDEX_ESPERADO = /(^|\/)(404|componentes|gracias|privacidad-borrador)(\/|\.html|$)/;
@@ -133,6 +133,7 @@ async function modoDist() {
     }
   };
   recorrer(raiz);
+  if (htmls.length === 0) { console.error(`No encontré páginas .html en ${op.dist}/: no revisé nada. Corre primero el build o pasa la carpeta correcta con --dist.`); process.exit(2); }
   const existeInterno = (href, desde) => {
     let destino = href.split('?')[0];
     if (!destino.startsWith('/')) destino = path.posix.join(path.posix.dirname(desde), destino);
