@@ -88,7 +88,7 @@ Encuentra el par que falla, mide cuánto falla y propone un color que cumple sin
 
 ## Más del mismo autor
 
-Guías gratis sobre diseño con Claude Code en [carloslagos.cl/guias](https://carloslagos.cl/guias/).
+Guías gratis sobre diseño con Claude Code en [carloslagos.cl/guias](https://carloslagos.cl/guias/repo/).
 
 ## Licencia
 
